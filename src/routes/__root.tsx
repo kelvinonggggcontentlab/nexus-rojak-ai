@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "BLACKTOWER NEXUS V2" },
+      { name: "description", content: "Nexus Assistant is an AI-powered personal assistant that leverages Google Gemini for intelligent conversations and task management." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "BLACKTOWER NEXUS V2" },
+      { property: "og:description", content: "Nexus Assistant is an AI-powered personal assistant that leverages Google Gemini for intelligent conversations and task management." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "BLACKTOWER NEXUS V2" },
+      { name: "twitter:description", content: "Nexus Assistant is an AI-powered personal assistant that leverages Google Gemini for intelligent conversations and task management." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ce59da67-ceda-455c-a5f9-1cc8d5110b11/id-preview-17579ddc--6e4de065-781c-4d99-a774-c591afd9ef70.lovable.app-1781090480167.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ce59da67-ceda-455c-a5f9-1cc8d5110b11/id-preview-17579ddc--6e4de065-781c-4d99-a774-c591afd9ef70.lovable.app-1781090480167.png" },
     ],
     links: [
       {
