@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      nexus_memory: {
+        Row: {
+          created_at: string
+          id: string
+          key: string
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          key: string
+          updated_at?: string
+          value: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          key?: string
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
+      }
+      telegram_messages: {
+        Row: {
+          chat_id: number
+          created_at: string
+          raw_update: Json
+          text: string | null
+          update_id: number
+          user_id: number | null
+        }
+        Insert: {
+          chat_id: number
+          created_at?: string
+          raw_update: Json
+          text?: string | null
+          update_id: number
+          user_id?: number | null
+        }
+        Update: {
+          chat_id?: number
+          created_at?: string
+          raw_update?: Json
+          text?: string | null
+          update_id?: number
+          user_id?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
