@@ -154,8 +154,7 @@ export const Route = createFileRoute("/api/public/telegram/webhook")({
           replyText = result.reply;
         } catch (err) {
           console.error("nexusChat error:", err);
-          const msg = err instanceof Error ? err.message : String(err);
-          replyText = `<b>NEXUS Warning:</b> ${msg.slice(0, 300)}`;
+          replyText = "<b>NEXUS:</b> Something went wrong, try again later.";
         }
 
         await sendMessage(chatId, replyText);
