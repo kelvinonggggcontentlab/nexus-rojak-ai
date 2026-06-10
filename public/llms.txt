@@ -1,0 +1,7 @@
+# BLACKTOWER NEXUS V2
+
+> An AI-powered personal assistant delivered via Telegram, leveraging GPT for intelligent conversations, task management, and 24/7 assistance.
+
+## Pages
+
+- [Home](/): Landing page for BLACKTOWER NEXUS V2 — an AI assistant that integrates with Telegram to provide intelligent, always-on support.
