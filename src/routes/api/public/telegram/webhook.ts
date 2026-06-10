@@ -107,9 +107,14 @@ export const Route = createFileRoute("/api/public/telegram/webhook")({
           .maybeSingle();
         if (existing) return Response.json({ ok: true, duplicate: true });
 
-        // Access control
+        // Access control — BOSS_TELEGRAM_ID is required; deny by default
         const bossId = process.env.BOSS_TELEGRAM_ID;
-        if (bossId && String(fromId) !== String(bossId)) {
+        if (!bossId) {
+          console.error("BOSS_TELEGRAM_ID is not configured — denying all requests");
+          return new Response("Server misconfigured", { status: 500 });
+        }
+        const allowed = bossId.split(",").map((s) => s.trim()).filter(Boolean);
+        if (!allowed.includes(String(fromId))) {
           await sendMessage(chatId, "<b>Access Denied.</b>");
           return Response.json({ ok: true, denied: true });
         }
