@@ -125,7 +125,7 @@ export const Route = createFileRoute("/api/public/telegram/webhook")({
             chat_id: chatId,
             user_id: fromId ?? null,
             text,
-            raw_update: update as never,
+            raw_update: update as any,
           });
           return Response.json({ ok: true });
         }
@@ -161,7 +161,7 @@ export const Route = createFileRoute("/api/public/telegram/webhook")({
           chat_id: chatId,
           user_id: fromId ?? null,
           text,
-          raw_update: { ...update, _nexus_reply: replyText } as never,
+          raw_update: { ...update, _nexus_reply: replyText } as any,
         });
 
         return Response.json({ ok: true });
