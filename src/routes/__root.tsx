@@ -77,16 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "BLACKTOWER NEXUS V2" },
-      { name: "description", content: "Nexus Assistant is an AI-powered personal assistant that leverages Google Gemini for intelligent conversations and task management." },
+      { title: "BLACKTOWER NEXUS V2 — AI Personal Assistant" },
+      { name: "description", content: "BLACKTOWER NEXUS V2 is an AI-powered personal assistant delivered through Telegram for intelligent conversations and task management." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "BLACKTOWER NEXUS V2" },
-      { property: "og:description", content: "Nexus Assistant is an AI-powered personal assistant that leverages Google Gemini for intelligent conversations and task management." },
+      { property: "og:title", content: "BLACKTOWER NEXUS V2 — AI Personal Assistant" },
+      { property: "og:description", content: "BLACKTOWER NEXUS V2 is an AI-powered personal assistant delivered through Telegram for intelligent conversations and task management." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "BLACKTOWER NEXUS V2" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "BLACKTOWER NEXUS V2" },
-      { name: "twitter:description", content: "Nexus Assistant is an AI-powered personal assistant that leverages Google Gemini for intelligent conversations and task management." },
+      { name: "twitter:title", content: "BLACKTOWER NEXUS V2 — AI Personal Assistant" },
+      { name: "twitter:description", content: "BLACKTOWER NEXUS V2 is an AI-powered personal assistant delivered through Telegram for intelligent conversations and task management." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ce59da67-ceda-455c-a5f9-1cc8d5110b11/id-preview-17579ddc--6e4de065-781c-4d99-a774-c591afd9ef70.lovable.app-1781090480167.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ce59da67-ceda-455c-a5f9-1cc8d5110b11/id-preview-17579ddc--6e4de065-781c-4d99-a774-c591afd9ef70.lovable.app-1781090480167.png" },
     ],
@@ -96,12 +97,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "BLACKTOWER NEXUS V2",
+              url: "https://nexus-rojak-ai.lovable.app",
+              description:
+                "BLACKTOWER NEXUS V2 is an AI-powered personal assistant delivered through Telegram.",
+            },
+            {
+              "@type": "WebSite",
+              name: "BLACKTOWER NEXUS V2",
+              url: "https://nexus-rojak-ai.lovable.app",
+              description:
+                "AI-powered personal assistant delivered through Telegram for intelligent conversations and task management.",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
