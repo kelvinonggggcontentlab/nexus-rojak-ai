@@ -38,6 +38,39 @@ export type Database = {
         }
         Relationships: []
       }
+      nexus_reminders: {
+        Row: {
+          chat_id: number
+          created_at: string
+          id: string
+          message: string
+          remind_at: string
+          sent_at: string | null
+          updated_at: string
+          user_id: number | null
+        }
+        Insert: {
+          chat_id: number
+          created_at?: string
+          id?: string
+          message: string
+          remind_at: string
+          sent_at?: string | null
+          updated_at?: string
+          user_id?: number | null
+        }
+        Update: {
+          chat_id?: number
+          created_at?: string
+          id?: string
+          message?: string
+          remind_at?: string
+          sent_at?: string | null
+          updated_at?: string
+          user_id?: number | null
+        }
+        Relationships: []
+      }
       telegram_messages: {
         Row: {
           chat_id: number
